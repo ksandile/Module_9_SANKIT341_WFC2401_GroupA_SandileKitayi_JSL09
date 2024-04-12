@@ -1,21 +1,16 @@
-# coc8943e9b5f4e75acabb6641
+# Dashboard 
+## This function fetches weather and cryptocurrency data asynchronously and updates the DOM accordingly, providing real-time information to the user. And it is styled for all screen sizes
 
-Quick start:
+1. The function begins with a try block to handle potential errors during asynchronous operations.
 
-```
-$ npm install
-$ npm start
-````
+2. It uses the navigator.geolocation.getCurrentPosition() method to obtain the user's current position asynchronously. This is wrapped in a Promise to ensure the asynchronous result is handled properly.
 
-Head over to https://vitejs.dev/ to learn more about using vite
-## About Scrimba
+3. After obtaining the user's position, the function sends a request to the OpenWeatherMap API (https://apis.scrimba.com/openweathermap/data/2.5/weather) to fetch weather data based on the latitude and longitude coordinates.
 
-At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜
-If we succeed with this, it will give anyone who wants to become a software developer a realistic shot at succeeding, regardless of where they live and the size of their wallets 🎉
-The Frontend Developer Career Path aims to teach you everything you need to become a Junior Developer, or you could take a deep-dive with one of our advanced courses 🚀
+4. If the weather data retrieval is successful (i.e., weatherRes.ok is true), it parses the JSON response and extracts relevant information such as temperature, city name, and weather icon URL. Then, it updates the DOM elements related to weather with the fetched data.
 
-- [Our courses](https://scrimba.com/allcourses)
-- [The Frontend Career Path](https://scrimba.com/learn/frontend)
-- [Become a Scrimba Pro member](https://scrimba.com/pricing)
+5. Next, the function sends a request to the CoinGecko API (https://api.coingecko.com/api/v3/coins/dogecoin) to fetch cryptocurrency data for Dogecoin.
 
-Happy Coding!
+6. If the cryptocurrency data retrieval is successful, it parses the JSON response and updates the DOM elements related to cryptocurrency with the fetched data, including the cryptocurrency's name, logo, current price, highest price in the last 24 hours, and lowest price in the last 24 hours.
+
+7. Any errors that occur during the process are caught in the catch block, and appropriate error handling can be implemented.

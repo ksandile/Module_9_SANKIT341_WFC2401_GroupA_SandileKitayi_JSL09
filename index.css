@@ -30,7 +30,7 @@ h1.time {
 }
 
 div#crypto {
-    font-size: 1.3rem;
+    font-size: 30px;
 }
 
 div#crypto > p {
@@ -65,15 +65,39 @@ p.weather-city {
     text-align: right;
     margin: 0;
     margin-top: -10px;
-    font-size: 1.2rem;
+    font-size: 50px;
 }
 
 p.weather-temp {
     margin: 0;
-    font-size: 1.7rem;
+    font-size: 50px;
     margin-left: -10px;
 }
 
 p#author {
-    font-size: 1rem;
+    font-size: 30px;
+    font-style: italic;
+}
+
+@media screen and (max-width: 600px) {
+    h1.time {
+        font-size: 2rem; 
+    }
+
+    div#crypto {
+        font-size: 16px; 
+    }
+
+    div#weather > img {
+        width: 40px; 
+    }
+
+    p.weather-city,
+    p.weather-temp {
+        font-size: 24px; 
+    }
+
+    p#author {
+        font-size: 16px; 
+    }
 }
